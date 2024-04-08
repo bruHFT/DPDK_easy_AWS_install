@@ -58,7 +58,9 @@ sudo ln -s /usr/local/bin/pkg-config /usr/bin/pkg-config
 
 # Compile F-Stack
 export FF_PATH=/data/f-stack
-export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:
+/usr/lib/x86_64-linux-gnu/pkgconfig:
+/usr/lib/pkgconfig"
 
 # Install F-STACK
 # libfstack.a will be installed to /usr/local/lib
