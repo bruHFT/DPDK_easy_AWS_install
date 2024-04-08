@@ -18,6 +18,7 @@ yes | apt-get install git gcc openssl libssl-dev linux-headers-$(uname -r) bc li
 echo -e "\n" | sudo -E apt-get -y install python3-pip
 yes | pip3 install pyelftools --upgrade
 yes | sudo python3 -m pip install meson ninja pyelftools
+yes | sudo apt install gcc make libssl-dev net-tools 
 
 # Compile DPDK
 cd  /data/f-stack/dpdk/
