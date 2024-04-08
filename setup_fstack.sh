@@ -18,7 +18,6 @@ yes | apt-get install git gcc openssl libssl-dev linux-headers-$(uname -r) bc li
 echo -e "\n" | sudo -E apt-get -y install python3-pip
 yes | pip3 install pyelftools --upgrade
 yes | sudo python3 -m pip install meson ninja pyelftools
-echo -e "\n" | sudo apt install net-tools                          # On ubuntu
 
 # Compile DPDK
 cd  /data/f-stack/dpdk/
@@ -43,7 +42,7 @@ modprobe uio
 insmod /data/f-stack/dpdk/build/kernel/linux/igb_uio/igb_uio.ko
 insmod /data/f-stack/dpdk/build/kernel/linux/kni/rte_kni.ko carrier=on # carrier=on is necessary, otherwise need to be up `veth0` via `echo 1 > /sys/class/net/veth0/carrier`
 python3 usertools/dpdk-devbind.py --status
-ifconfig ens6 down
+sudo ip link set ens6 down
 python3 usertools/dpdk-devbind.py --bind=igb_uio ens6 # assuming that use 10GE NIC
 
 # Upgrade pkg-config while version < 0.28
