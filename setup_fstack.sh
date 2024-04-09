@@ -10,6 +10,7 @@ sudo apt update
 
 mkdir -p /data/f-stack
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
+git clone https://github.com/renzibei/f-stack.git /data/f-stack
 
 # Install libnuma-dev
 yes | sudo apt-get install libnuma-dev  # on Ubuntu
