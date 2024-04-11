@@ -41,7 +41,7 @@ echo 0 > /proc/sys/kernel/randomize_va_space
 
 # Offload NIC
 modprobe uio
-insmod /data/f-stack/dpdk/build/kernel/linux/igb_uio/igb_uio.ko
+insmod /data/f-stack/dpdk/build/kernel/linux/igb_uio/igb_uio.ko wc_activate=1
 insmod /data/f-stack/dpdk/build/kernel/linux/kni/rte_kni.ko carrier=on # carrier=on is necessary, otherwise need to be up `veth0` via `echo 1 > /sys/class/net/veth0/carrier`
 python3 usertools/dpdk-devbind.py --status
 sudo ip link set ens6 down
